@@ -1,0 +1,92 @@
+.displayNone{
+    display:none;
+}
+.required:after {
+    content:" *";
+    color: red;
+}
+
+.grid-divider {
+    border-right: 1px solid gray;
+}
+
+
+.alert-static {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+.alert-static-primary {
+    color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+}
+
+.alert-static-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-static-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert-static-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+div.has-error {
+    color: red;
+}
+
+.text-editor {
+    z-index: 999;
+    background-color: white;
+}
+
+/*.ql-container {
+    height: auto;
+}*/
+
+textarea.customize-text-editor {
+    z-index: -999;
+    border: none;
+    position: absolute;
+    bottom: 0;
+    left:0;
+}
+
+.border-6 {
+    margin: 0 -15px 0 -15px;
+    /*border: solid #5A8DEE;*/
+    border: solid #475F7B!important;
+}
+
+.form-control.disabled, .text-area-design.disabled {
+    background-color: #FEFEFE;
+    color: black!important;
+}
+
+.text-area-design {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 3px;
+}
+
+.btn-custom-spacing {
+    padding: 0 5px 0 0;
+}
+
+/*select#dept_id .select2-results__option, select#emp_id .select2-results__option {
+    width: 200px;
+    word-wrap: break-word;
+    text-overflow: inherit;
+    white-space: normal;
+}*/

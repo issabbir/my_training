@@ -1,0 +1,46 @@
+<?php
+
+return [
+    'cpa_security' => [
+        'driver'         => 'oracle',
+        'tns'            => env('DB_TNS', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.78.1)(PORT=1521))) (CONNECT_DATA=(SERVER=DEDICATED)(SID=dummydb)))'),
+        'host'           => env('DB_HOST', ''),
+        'port'           => env('DB_PORT', '1521'),
+        'database'       => env('DB_DATABASE', ''),
+        'username'       => env('DB_USERNAME', ''),
+        'password'       => env('DB_PASSWORD', ''),
+        'charset'        => env('DB_CHARSET', 'AL32UTF8'),
+        'prefix'         => env('DB_PREFIX', ''),
+        'prefix_schema'  => env('DB_SCHEMA_PREFIX', ''),
+        'edition'        => env('DB_EDITION', 'ora$base'),
+        'server_version' => env('DB_SERVER_VERSION', '11g'),
+    ],
+    'pmis' => [
+        'driver'         => 'oracle',
+        'tns'            => env('DB_TNS', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.78.1)(PORT=1521))) (CONNECT_DATA=(SERVER=DEDICATED)(SID=dummydb)))'),
+        'host'           => env('DB_HOST', ''),
+        'port'           => env('DB_PORT', '1521'),
+        'database'       => env('DB_DATABASE', ''),
+        'username'       => env('DB_USERNAME', ''),
+        'password'       => env('DB_PASSWORD', ''),
+        'charset'        => env('DB_CHARSET', 'AL32UTF8'),
+        'prefix'         => env('DB_PREFIX', ''),
+        'prefix_schema'  => env('DB_SCHEMA_PREFIX', ''),
+        'edition'        => env('DB_EDITION', 'ora$base'),
+        'server_version' => env('DB_SERVER_VERSION', '11g'),
+    ],
+    'tims' => [
+        'driver'         => 'oracle',
+        'tns'            => env('DB_TNS', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.78.1)(PORT=1521))) (CONNECT_DATA=(SERVER=DEDICATED)(SID=dummydb)))'),
+        'host'           => env('DB_HOST', ''),
+        'port'           => env('DB_PORT', '1521'),
+        'database'       => env('DB_DATABASE', ''),
+        'username'       => env('DB_USERNAME', ''),
+        'password'       => env('DB_PASSWORD', ''),
+        'charset'        => env('DB_CHARSET', 'AL32UTF8'),
+        'prefix'         => env('DB_PREFIX', ''),
+        'prefix_schema'  => env('DB_SCHEMA_PREFIX', ''),
+        'edition'        => env('DB_EDITION', 'ora$base'),
+        'server_version' => env('DB_SERVER_VERSION', '11g'),
+    ]
+];

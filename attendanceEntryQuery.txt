@@ -1,0 +1,39 @@
+$querys = "SELECT DISTINCT TTCM.SCHEDULE_ID AS SCHEDULE_ID,
+                TTCM.BATCH_ID AS BATCH_ID,
+                TTAS.TRAINEE_ID AS TRAINEE_ID,
+                TTAS.ORGANIZATION_NAME AS ORGANIZATION_NAME,
+                (SELECT e.TRAINEE_NAME
+                   FROM trainee e
+                  WHERE TTAS.TRAINEE_ID = e.TRAINEE_ID)
+                   AS STUDENT,
+                TO_CHAR (TTCM.TRAINING_TIME_FROM, 'hh:mi AM') AS TIME_FROM,
+                TO_CHAR (TTCM.TRAINING_TIME_TO, 'hh:mi AM') AS TIME_TO
+  FROM TIMS.TRAINING_SCHEDULE_MST TTCM, TIMS.TRAINEE_ASSIGNMENT_SCHEDULE TTAS
+ WHERE     TTCM.SCHEDULE_ID = TTAS.SCHEDULE_MST_ID
+       AND (SELECT e.TRAINEE_NAME
+              FROM trainee e
+             WHERE TTAS.TRAINEE_ID = e.TRAINEE_ID)
+              IS NOT NULL
+       AND TTAS.BATCH_ID = '" . $request->get("batch_id") . "'
+       AND TRUNC (TTCM.TRAINING_START_DATE) <= '" . $examDate . "'
+       AND TRUNC (TTCM.TRAINING_END_DATE) >= '" . $examDate . "'
+UNION ALL
+SELECT DISTINCT TTCM.SCHEDULE_ID AS SCHEDULE_ID,
+                TTCM.BATCH_ID AS BATCH_ID,
+                TTAS.TRAINEE_ID AS TRAINEE_ID,
+                TTAS.ORGANIZATION_NAME AS ORGANIZATION_NAME,
+                (SELECT e.EMP_NAME
+                   FROM pmis.employee e
+                  WHERE e.EMP_ID = TTAS.TRAINEE_ID)
+                   AS STUDENT,
+                TO_CHAR (TTCM.TRAINING_TIME_FROM, 'hh:mi AM') AS TIME_FROM,
+                TO_CHAR (TTCM.TRAINING_TIME_TO, 'hh:mi AM') AS TIME_TO
+  FROM TIMS.TRAINING_SCHEDULE_MST TTCM, TIMS.TRAINEE_ASSIGNMENT_SCHEDULE TTAS
+ WHERE     TTCM.SCHEDULE_ID = TTAS.SCHEDULE_MST_ID
+       AND (SELECT e.EMP_NAME
+              FROM pmis.employee e
+             WHERE e.EMP_ID = TTAS.TRAINEE_ID)
+              IS NOT NULL
+       AND TTAS.BATCH_ID = '" . $request->get("batch_id") . "'
+       AND TRUNC (TTCM.TRAINING_START_DATE) <= '" . $examDate . "'
+       AND TRUNC (TTCM.TRAINING_END_DATE) >= '" . $examDate . "'";

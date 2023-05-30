@@ -1,0 +1,19 @@
+b{
+    font-weight: 500;
+}
+.wizard.vertical .steps ul li a {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: left;
+    margin: 0 .5rem;
+    padding: 15px 2px;
+    border-radius: .267rem;
+}
+.wizard.vertical .content {
+      min-height: 483px;
+ }
+.nav.nav-pills~.tab-content,.pills-stacked .tab-content {
+     box-shadow: -8px 12px 18px 0 rgba(25, 42, 70, 0);
+ }
